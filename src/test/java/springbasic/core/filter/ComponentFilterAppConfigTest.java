@@ -1,0 +1,47 @@
+package springbasic.core.filter;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.NoSuchBeanDefinitionException;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.FilterType;
+
+/**
+ * packageName    : springbasic.core.filter
+ * fileName       : ComponentFilterAppConfigTest
+ * author         : asdfz
+ * date           : 2024-01-03
+ * description    :
+ * ===============================================
+ * DATE              AUTHOR             NOTE
+ * -----------------------------------------------
+ * 2024-01-03        asdfz       최초 생성
+ */
+public class ComponentFilterAppConfigTest {
+
+    @Test
+    void filterScan() {
+        AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(
+            ComponentFilterAppConfig.class);
+
+        BeanA beanA = ac.getBean("beanA", BeanA.class);
+        assertThat(beanA).isNotNull();
+
+        assertThrows(NoSuchBeanDefinitionException.class,
+            () -> ac.getBean("beanB", BeanB.class));
+    }
+
+    @Configuration
+    @ComponentScan(includeFilters = @ComponentScan.Filter(type = FilterType.ANNOTATION,
+        classes = MyIncludeComponent.class),
+        excludeFilters = @ComponentScan.Filter(type = FilterType.ANNOTATION,
+            classes = MyExcludeComponent.class)
+    )
+    static class ComponentFilterAppConfig {
+
+    }
+}

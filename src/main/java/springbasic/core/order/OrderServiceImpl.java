@@ -1,26 +1,22 @@
 package springbasic.core.order;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import springbasic.core.discount.DiscountPolicy;
-import springbasic.core.discount.FixDiscountPolicy;
-import springbasic.core.discount.RateDiscountPolicy;
 import springbasic.core.member.Member;
 import springbasic.core.member.MemberRepository;
-import springbasic.core.member.MemberService;
-import springbasic.core.member.MemoryMemberRepository;
 
-/**
- * packageName    : springbasic.core.order fileName       : OrderServiceImpl author         : asdfz date           :
- * 2023-12-28 description    : =============================================== DATE              AUTHOR             NOTE
- * ----------------------------------------------- 2023-12-28        asdfz       최초 생성
- */
+
+@Component
 public class OrderServiceImpl implements OrderService {
 
     private final MemberRepository memberRepository;
-//    private final DiscountPolicy discountPolicy = new FixDiscountPolicy();
+    //    private final DiscountPolicy discountPolicy = new FixDiscountPolicy();
     //변경 코드  OCP 위반
 //    private final DiscountPolicy discountPolicy = new RateDiscountPolicy();
-    private DiscountPolicy discountPolicy;
+    private final DiscountPolicy discountPolicy;
 
+    @Autowired
     public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;

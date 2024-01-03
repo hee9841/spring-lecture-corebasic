@@ -2,10 +2,12 @@ package springbasic.core.member;
 
 import java.util.HashMap;
 import java.util.Map;
+import org.springframework.stereotype.Component;
 
 /**
  * 구현체
  */
+@Component
 public class MemoryMemberRepository implements MemberRepository{
 
     //동시성 이슈때문에 concurrent hashMap을 사용함(실무에서) -> 따로 공부

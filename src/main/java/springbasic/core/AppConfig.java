@@ -3,7 +3,6 @@ package springbasic.core;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import springbasic.core.discount.DiscountPolicy;
-import springbasic.core.discount.FixDiscountPolicy;
 import springbasic.core.discount.RateDiscountPolicy;
 import springbasic.core.member.MemberRepository;
 import springbasic.core.member.MemberService;
@@ -17,22 +16,28 @@ public class AppConfig {
 
     @Bean
     public MemberService memberService() {
-        return new MemberServiceImpl(getMemberRepository());
+        System.out.println("call AppConfig.memberService");
+        return new MemberServiceImpl(memberRepository());
     }
 
     @Bean
     public OrderService orderService() {
-        return new OrderServiceImpl(getMemberRepository(), getDiscountPolicy());
+        System.out.println("call AppConfig.orderService");
+        return new OrderServiceImpl(memberRepository(), discountPolicy());
     }
 
     @Bean
-    public static MemberRepository getMemberRepository() {
+    public MemberRepository memberRepository() {
+        System.out.println("call AppConfig.memberRepository");
         return new MemoryMemberRepository();
     }
 
     @Bean
-    public static DiscountPolicy getDiscountPolicy() {
+    public DiscountPolicy discountPolicy() {
 //        return new FixDiscountPolicy();
         return new RateDiscountPolicy();
     }
+
+    //todo
+    // static 으로 메서드 선언하면 싱글톤으로 생성ㅎ 안됨???
 }

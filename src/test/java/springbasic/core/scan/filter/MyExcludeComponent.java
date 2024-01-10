@@ -1,15 +1,14 @@
-package springbasic.core.filter;
+package springbasic.core.scan.filter;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
-import org.springframework.stereotype.Indexed;
 
 /**
  * packageName    : springbasic.core.filter
- * fileName       : MyIncludeComponent
+ * fileName       : MyExcludeComponent
  * author         : asdfz
  * date           : 2024-01-03
  * description    :
@@ -22,6 +21,6 @@ import org.springframework.stereotype.Indexed;
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
-public @interface MyIncludeComponent {
+public @interface MyExcludeComponent {
 
 }

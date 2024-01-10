@@ -1,8 +1,8 @@
-package springbasic.core.filter;
+package springbasic.core.scan.filter;
 
 /**
  * packageName    : springbasic.core.filter
- * fileName       : BeanA
+ * fileName       : BeanB
  * author         : asdfz
  * date           : 2024-01-03
  * description    :
@@ -11,7 +11,7 @@ package springbasic.core.filter;
  * -----------------------------------------------
  * 2024-01-03        asdfz       최초 생성
  */
-@MyIncludeComponent
-public class BeanA {
+@MyExcludeComponent
+public class BeanB {
 
 }

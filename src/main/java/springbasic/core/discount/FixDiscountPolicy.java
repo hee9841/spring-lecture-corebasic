@@ -1,13 +1,12 @@
 package springbasic.core.discount;
 
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 import springbasic.core.member.Grade;
 import springbasic.core.member.Member;
 
-/**
- * packageName    : springbasic.core.discount fileName       : FixDiscountPolicy author         : asdfz date           :
- * 2023-12-28 description    : =============================================== DATE              AUTHOR             NOTE
- * ----------------------------------------------- 2023-12-28        asdfz       최초 생성
- */
+
+@Component
 public class FixDiscountPolicy implements DiscountPolicy{
 
     private int discountFixAmount = 1000;

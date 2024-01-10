@@ -17,14 +17,15 @@ import springbasic.core.discount.RateDiscountPolicy;
 
 public class ApplicationContextExtendsFindTest {
 
-    AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(TestConfig.class);
+    AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(
+        TestConfig.class);
 
 
     @Test
     @DisplayName("부모 타입으로 조회시, 지식이 둘 이상있으면, 중복 오류 발생")
     void findByParentTypeDuplicate() {
         assertThrows(NoUniqueBeanDefinitionException.class,
-                () -> ac.getBean(DiscountPolicy.class));
+            () -> ac.getBean(DiscountPolicy.class));
 
     }
 
@@ -41,6 +42,7 @@ public class ApplicationContextExtendsFindTest {
         RateDiscountPolicy bean = ac.getBean(RateDiscountPolicy.class);
         assertThat(bean).isInstanceOf(RateDiscountPolicy.class);
     }
+
     @Test
     @DisplayName("부모타입을 모두 조회하기")
     void findAllBeanByParentType() {
@@ -60,6 +62,7 @@ public class ApplicationContextExtendsFindTest {
 
     @Configuration
     static class TestConfig {
+
         @Bean
         public DiscountPolicy rateDiscountPolicy() {
             return new RateDiscountPolicy();

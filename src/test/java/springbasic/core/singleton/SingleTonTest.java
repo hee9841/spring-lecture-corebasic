@@ -10,6 +10,7 @@ import springbasic.core.AppConfig;
 import springbasic.core.member.MemberService;
 
 public class SingleTonTest {
+
     @Test
     @DisplayName("스프링 없는 순수한 DI 컨테이너")
     void pureContainer() {

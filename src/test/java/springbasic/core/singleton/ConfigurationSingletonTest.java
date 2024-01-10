@@ -21,8 +21,10 @@ public class ConfigurationSingletonTest {
         OrderServiceImpl orderService = ac.getBean("orderService", OrderServiceImpl.class);
         MemberRepository memberRepository = ac.getBean("memberRepository", MemberRepository.class);
 
-        System.out.println("memberService -> memberRepository = " + memberService.getMemberRepository());
-        System.out.println("orderService -> memberRepository = " + orderService.getMemberRepository());
+        System.out.println(
+            "memberService -> memberRepository = " + memberService.getMemberRepository());
+        System.out.println(
+            "orderService -> memberRepository = " + orderService.getMemberRepository());
         System.out.println("memberRepository -> memberRepository = " + memberRepository);
         //세번의 new가 호출되는게 맞는데 같은 인서튼스임
         assertThat(memberService.getMemberRepository()).isSameAs(memberRepository);

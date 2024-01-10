@@ -10,6 +10,7 @@ import springbasic.core.order.OrderService;
 
 
 public class OrderApp {
+
     public static void main(String[] args) {
 //        AppConfig appConfig = new AppConfig();
 //

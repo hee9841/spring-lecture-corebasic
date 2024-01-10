@@ -1,10 +1,6 @@
 package springbasic.core.order;
 
-/**
- * packageName    : springbasic.core.order fileName       : Order author         : asdfz date           : 2023-12-28
- * description    : =============================================== DATE              AUTHOR             NOTE
- * ----------------------------------------------- 2023-12-28        asdfz       최초 생성
- */
+
 public class Order {
 
     private Long memberId;
@@ -58,10 +54,10 @@ public class Order {
     @Override
     public String toString() {
         return "Order{" +
-                "memberId=" + memberId +
-                ", itemName='" + itemName + '\'' +
-                ", itemPrice=" + itemPrice +
-                ", discountPrice=" + discountPrice +
-                '}';
+            "memberId=" + memberId +
+            ", itemName='" + itemName + '\'' +
+            ", itemPrice=" + itemPrice +
+            ", discountPrice=" + discountPrice +
+            '}';
     }
 }

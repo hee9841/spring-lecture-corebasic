@@ -10,17 +10,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.FilterType;
 
-/**
- * packageName    : springbasic.core.filter
- * fileName       : ComponentFilterAppConfigTest
- * author         : asdfz
- * date           : 2024-01-03
- * description    :
- * ===============================================
- * DATE              AUTHOR             NOTE
- * -----------------------------------------------
- * 2024-01-03        asdfz       최초 생성
- */
+
 public class ComponentFilterAppConfigTest {
 
     @Test

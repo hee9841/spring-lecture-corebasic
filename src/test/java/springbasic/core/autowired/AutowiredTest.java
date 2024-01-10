@@ -8,17 +8,6 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import springbasic.core.member.Member;
 
-/**
- * packageName    : springbasic.core.autowired
- * fileName       : AutowiredTest
- * author         : asdfz
- * date           : 2024-01-04
- * description    :
- * ===============================================
- * DATE              AUTHOR             NOTE
- * -----------------------------------------------
- * 2024-01-04        asdfz       최초 생성
- */
 public class AutowiredTest {
 
     @Test

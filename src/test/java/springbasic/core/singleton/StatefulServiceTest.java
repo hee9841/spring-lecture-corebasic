@@ -29,6 +29,7 @@ class StatefulServiceTest {
     }
 
     static class TestConfig {
+
         @Bean
         public StatefulService statefulService() {
             return new StatefulService();

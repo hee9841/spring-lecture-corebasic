@@ -1,7 +1,8 @@
 package springbasic.core.benfind;
 
 
-import static org.assertj.core.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -12,6 +13,7 @@ import springbasic.core.member.MemberService;
 import springbasic.core.member.MemberServiceImpl;
 
 public class ApplicationContextBasicFindTest {
+
     AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
 
     @Test
@@ -43,7 +45,7 @@ public class ApplicationContextBasicFindTest {
         assertThatThrownBy(() ->
             ac.getBean("xxxx", MemberService.class)
         ).isInstanceOf(NoSuchBeanDefinitionException.class);
-        
+
     }
 
 

@@ -8,6 +8,7 @@ import springbasic.core.member.Member;
 
 
 class RateDiscountPolicyTest {
+
     RateDiscountPolicy discountPolicy = new RateDiscountPolicy();
 
     @Test
@@ -17,7 +18,6 @@ class RateDiscountPolicyTest {
 
         assertThat(discount).isEqualTo(1000);
     }
-
 
 
     @Test

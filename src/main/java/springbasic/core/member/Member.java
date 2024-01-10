@@ -1,11 +1,8 @@
 package springbasic.core.member;
 
-/**
- * packageName    : springbasic.core.member fileName       : Member author         : asdfz date           : 2023-12-28
- * description    : =============================================== DATE              AUTHOR             NOTE
- * ----------------------------------------------- 2023-12-28        asdfz       최초 생성
- */
+
 public class Member {
+
     private Long id;
     private String name;
     private Grade grade;

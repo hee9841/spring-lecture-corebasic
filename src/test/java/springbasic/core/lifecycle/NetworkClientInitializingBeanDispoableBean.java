@@ -4,7 +4,8 @@ package springbasic.core.lifecycle;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
 
-public class NetworkClientInitializingBeanDispoableBean implements InitializingBean, DisposableBean {
+public class NetworkClientInitializingBeanDispoableBean implements InitializingBean,
+    DisposableBean {
 
     private String url;
 
@@ -22,7 +23,7 @@ public class NetworkClientInitializingBeanDispoableBean implements InitializingB
     }
 
     public void call(String msg) {
-        System.out.println("call :" + url + " message = "+ msg);
+        System.out.println("call :" + url + " message = " + msg);
     }
 
     //서비스 종료시 호출

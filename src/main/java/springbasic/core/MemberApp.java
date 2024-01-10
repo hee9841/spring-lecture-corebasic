@@ -5,20 +5,18 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import springbasic.core.member.Grade;
 import springbasic.core.member.Member;
 import springbasic.core.member.MemberService;
-import springbasic.core.member.MemberServiceImpl;
 
-/**
- *
- * 클라이언트 단
- *
- */
+
 public class MemberApp {
+
     public static void main(String[] args) {
 //        AppConfig appConfig = new AppConfig();
 //        MemberService memberService = appConfig.memberService();
 
-        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
-        MemberService memberService = applicationContext.getBean("memberService", MemberService.class);
+        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(
+            AppConfig.class);
+        MemberService memberService = applicationContext.getBean("memberService",
+            MemberService.class);
 
         Member member1 = new Member(1L, "memberA", Grade.VIP);
         memberService.join(member1);

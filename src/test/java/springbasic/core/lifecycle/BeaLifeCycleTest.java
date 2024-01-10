@@ -23,7 +23,7 @@ public class BeaLifeCycleTest {
     @Configuration
     static class LifeCycleConfig {
 
-        //        @Bean(initMethod = "init", destroyMethod = "close")
+//        @Bean(initMethod = "init", destroyMethod = "close")
         @Bean
         public NetworkClient networkClient() {
 //            NetworkClientInitializingBeanDispoableBean networkClientInitializingBeanDispoableBean = new NetworkClientInitializingBeanDispoableBean();
